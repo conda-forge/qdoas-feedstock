@@ -11,6 +11,10 @@ source:
 
 build:
   number: 1
+  ignore_run_exports_from:
+    # only need the CMake metadata for building;
+    # libs are not linked though, so avoid run-export
+    - libboost-python-devel
 
 requirements:
   build:
