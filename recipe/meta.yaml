@@ -10,7 +10,7 @@ source:
   sha256: 3179ff57a72950518bb7bbf0db1cf1081edae0c5d9fd77db995590384400aeb2
 
 build:
-  number: 1
+  number: 0
   ignore_run_exports_from:
     # only need the CMake metadata for building;
     # libs are not linked though, so avoid run-export
