@@ -10,7 +10,7 @@ source:
   sha256: a030313eb57e1df5d91d22964e6f74a58838cdff9e84f4e1e88bfcd731641b91
 
 build:
-  number: 0
+  number: 1
   ignore_run_exports_from:
     # only need the CMake metadata for building;
     # libs are not linked though, so avoid run-export
@@ -19,6 +19,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - {{ cdt('mesa-libgl-devel') }}  # [linux]
     - {{ cdt('mesa-dri-drivers') }}  # [linux]
