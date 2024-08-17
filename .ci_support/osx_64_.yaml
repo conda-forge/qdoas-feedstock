@@ -21,7 +21,7 @@ cxx_compiler_version:
 hdf4:
 - 4.2.15
 libboost_python_devel:
-- '1.84'
+- '1.86'
 libnetcdf:
 - 4.9.2
 macos_machine:
