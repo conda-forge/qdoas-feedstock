@@ -1,5 +1,5 @@
 {% set name = "qdoas" %}
-{% set version = "3.6.7" %}
+{% set version = "3.6.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/UVVIS-BIRA-IASB/qdoas/archive/refs/tags/{{ version }}.tar.gz
-  sha256: e199d67fd73969b0395b39f592f80162d244fa7ae634b7241567c3e195001be4
+  sha256: 09e3c23750a04fd0aecee25f3118832ba1028fad39a072acfd22672ad143136c
 
 build:
-  number: 1
+  number: 0
   ignore_run_exports_from:
     # only need the CMake metadata for building;
     # libs are not linked though, so avoid run-export
