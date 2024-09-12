@@ -10,11 +10,7 @@ source:
   sha256: f1e6e215142ad12adbe90d64bda06bc5730d536841d10a1ec3fb5dd7545fc072
 
 build:
-  number: 0
-  ignore_run_exports_from:
-    # only need the CMake metadata for building;
-    # libs are not linked though, so avoid run-export
-    - libboost-python-devel
+  number: 1
 
 requirements:
   build:
@@ -31,7 +27,7 @@ requirements:
     - make  # [not win]
     - pkg-config
   host:
-    - libboost-python-devel
+    - libboost-headers
     - coda >=2.24.2
     - eigen
     - hdf4
