@@ -10,7 +10,7 @@ cxx_compiler:
 - vs2019
 hdf4:
 - 4.2.15
-libboost_python_devel:
+libboost_headers:
 - '1.86'
 libnetcdf:
 - 4.9.2

@@ -20,7 +20,7 @@ docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 hdf4:
 - 4.2.15
-libboost_python_devel:
+libboost_headers:
 - '1.86'
 libnetcdf:
 - 4.9.2
