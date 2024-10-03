@@ -1,5 +1,5 @@
 {% set name = "qdoas" %}
-{% set version = "3.6.10" %}
+{% set version = "3.6.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/UVVIS-BIRA-IASB/qdoas/archive/refs/tags/{{ version }}.tar.gz
-  sha256: f1e6e215142ad12adbe90d64bda06bc5730d536841d10a1ec3fb5dd7545fc072
+  sha256: 2d59cd645b6b31549d53445389b7bfcab2138cb4bc3d61daee85bb4070b13d1d
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
