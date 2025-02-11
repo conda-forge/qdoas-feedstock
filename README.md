@@ -73,6 +73,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-doas_cl-green.svg)](https://anaconda.org/conda-forge/doas_cl) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/doas_cl.svg)](https://anaconda.org/conda-forge/doas_cl) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/doas_cl.svg)](https://anaconda.org/conda-forge/doas_cl) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/doas_cl.svg)](https://anaconda.org/conda-forge/doas_cl) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-qdoas-green.svg)](https://anaconda.org/conda-forge/qdoas) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/qdoas.svg)](https://anaconda.org/conda-forge/qdoas) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/qdoas.svg)](https://anaconda.org/conda-forge/qdoas) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/qdoas.svg)](https://anaconda.org/conda-forge/qdoas) |
 
 Installing qdoas
@@ -85,41 +86,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `qdoas` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `doas_cl, qdoas` can be installed with `conda`:
 
 ```
-conda install qdoas
-```
-
-or with `mamba`:
-
-```
-mamba install qdoas
-```
-
-It is possible to list all of the versions of `qdoas` available on your platform with `conda`:
-
-```
-conda search qdoas --channel conda-forge
+conda install doas_cl qdoas
 ```
 
 or with `mamba`:
 
 ```
-mamba search qdoas --channel conda-forge
+mamba install doas_cl qdoas
+```
+
+It is possible to list all of the versions of `doas_cl` available on your platform with `conda`:
+
+```
+conda search doas_cl --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search doas_cl --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search qdoas --channel conda-forge
+mamba repoquery search doas_cl --channel conda-forge
 
-# List packages depending on `qdoas`:
-mamba repoquery whoneeds qdoas --channel conda-forge
+# List packages depending on `doas_cl`:
+mamba repoquery whoneeds doas_cl --channel conda-forge
 
-# List dependencies of `qdoas`:
-mamba repoquery depends qdoas --channel conda-forge
+# List dependencies of `doas_cl`:
+mamba repoquery depends doas_cl --channel conda-forge
 ```
 
 
