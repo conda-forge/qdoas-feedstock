@@ -21,6 +21,12 @@ This software evolves along with the measurement techniques in DOAS. It has been
 validated in different intercomparison campaigns. The friendly user interface, flexibility and the
 robustness of the algorithms largely contribute to QDOAS success in the world.
 
+This feedstock provides 2 packages:
+
+ - the package `qdoas` contains GUI tools qdoas, convolution, ring and usamp,
+
+ - the package `doas_cl` contains the commmand-line tool doas_cl, suitable for batch processing.
+   This package does not depend on Qt and therefore takes up much less hard disk space.
 
 Current build status
 ====================
