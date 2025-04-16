@@ -117,6 +117,7 @@ outputs:
         - libnetcdf
         - qt-main
         - qwt
+        - doas_cl
 
 about:
   home: https://uv-vis.aeronomie.be/software/QDOAS/
