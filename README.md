@@ -73,7 +73,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-doas_cl-green.svg)](https://anaconda.org/conda-forge/doas_cl) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/doas_cl.svg)](https://anaconda.org/conda-forge/doas_cl) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/doas_cl.svg)](https://anaconda.org/conda-forge/doas_cl) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/doas_cl.svg)](https://anaconda.org/conda-forge/doas_cl) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-doas__cl-green.svg)](https://anaconda.org/conda-forge/doas_cl) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/doas_cl.svg)](https://anaconda.org/conda-forge/doas_cl) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/doas_cl.svg)](https://anaconda.org/conda-forge/doas_cl) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/doas_cl.svg)](https://anaconda.org/conda-forge/doas_cl) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-qdoas-green.svg)](https://anaconda.org/conda-forge/qdoas) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/qdoas.svg)](https://anaconda.org/conda-forge/qdoas) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/qdoas.svg)](https://anaconda.org/conda-forge/qdoas) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/qdoas.svg)](https://anaconda.org/conda-forge/qdoas) |
 
 Installing qdoas-all
