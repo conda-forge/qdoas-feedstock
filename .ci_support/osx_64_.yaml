@@ -25,7 +25,7 @@ hdf4:
 libboost_headers:
 - '1.88'
 libnetcdf:
-- 4.9.2
+- 4.9.3
 macos_machine:
 - x86_64-apple-darwin13.4.0
 qt_main:
