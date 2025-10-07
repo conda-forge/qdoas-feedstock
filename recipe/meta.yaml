@@ -1,5 +1,5 @@
 {% set name = "qdoas-all" %}
-{% set version = "3.7.6" %}
+{% set version = "3.7.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/UVVIS-BIRA-IASB/qdoas/archive/refs/tags/{{ version }}.tar.gz
-  sha256: c8e3867736bbcb00f6301fcf101973dc08cc4a4115d443330509db5670f8abee
+  sha256: 9706ce6f21555cfb7c0a6241a76f78291308f3e79287bc0b5b7dfdf7a82d19d1
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -34,6 +34,7 @@ requirements:
     - hdf5 >=1.14.2
     - libnetcdf
     - libxmlpp
+    - libxml2-devel  # [win]
     - glibmm
     - glib
     - qt-main
