@@ -26,6 +26,10 @@ libboost_headers:
 - '1.88'
 libnetcdf:
 - 4.9.3
+libxml2:
+- '2.14'
+libxml2_devel:
+- '2.14'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 qt_main:
