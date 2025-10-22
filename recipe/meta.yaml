@@ -34,7 +34,7 @@ requirements:
     - hdf5 >=1.14.2
     - libnetcdf
     - libxmlpp
-    - libxml2-devel  # [win]
+    - libxml2-devel
     - glibmm
     - glib
     - qt-main
