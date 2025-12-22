@@ -29,7 +29,7 @@ libnetcdf:
 libxml2_devel:
 - '2.14'
 qt6_main:
-- '6.9'
+- '6.10'
 target_platform:
 - linux-64
 zip_keys:
