@@ -25,6 +25,7 @@ requirements:
     - {{ cdt('libxext') }}     # [linux]
     - cmake
     - make  # [not win]
+    - qt6-main  # [osx and build_platform != target_platform]
     - pkg-config
   host:
     - libboost-headers
@@ -98,6 +99,7 @@ outputs:
         - {{ cdt('libxxf86vm') }}  # [linux]
         - {{ cdt('libxext') }}     # [linux]
         - cmake
+        - qt6-main  # [osx and build_platform != target_platform]
         - make  # [not win]
         - pkg-config
       host:
