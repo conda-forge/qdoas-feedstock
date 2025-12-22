@@ -37,14 +37,14 @@ requirements:
     - libxml2-devel
     - glibmm
     - glib
-    - qt-main
+    - qt6-main
     - qwt
   run:
     - coda >=2.24.2
     - hdf4
     - hdf5 >=1.14.2
     - libnetcdf
-    - qt-main
+    - qt6-main
     - qwt
 
 outputs:
@@ -109,14 +109,14 @@ outputs:
         - libnetcdf
         - libxmlpp
         - glibmm
-        - qt-main
+        - qt6-main
         - qwt
       run:
         - coda >=2.24.2
         - hdf4
         - hdf5 >=1.14.2
         - libnetcdf
-        - qt-main
+        - qt6-main
         - qwt
         - doas_cl
 
