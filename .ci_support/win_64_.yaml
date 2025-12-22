@@ -16,11 +16,9 @@ libboost_headers:
 - '1.88'
 libnetcdf:
 - 4.9.3
-libxml2:
-- '2.14'
 libxml2_devel:
 - '2.14'
-qt_main:
-- '5.15'
+qt6_main:
+- '6.9'
 target_platform:
 - win-64
