@@ -10,14 +10,14 @@ source:
   sha256: e77bd6b5a58b45f47e7ea3374fe5f918c521feb76348b4afe46ab8989c204060
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
-    - libgl-devel  # [linux]
+    - {{ cdt('mesa-libgl-devel') }}  # [linux]
     - {{ cdt('mesa-dri-drivers') }}  # [linux]
     - {{ cdt('libselinux') }}  # [linux]
     - {{ cdt('libxdamage') }}  # [linux]
@@ -122,6 +122,11 @@ outputs:
         - qt6-main
         - qwt
         - doas_cl
+    test:
+      commands:
+        - test -f ${PREFIX}/bin/qdoas  # [linux]
+        - test -f ${PREFIX}/qdoas.app/Contents/MacOS/qdoas  # [osx]
+        - if not exist %LIBRARY_BIN%\\qdoas.exe exit 1  # [win]
 
 about:
   home: https://uv-vis.aeronomie.be/software/QDOAS/
