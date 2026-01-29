@@ -122,6 +122,11 @@ outputs:
         - qt6-main
         - qwt
         - doas_cl
+    test:
+      commands:
+        - test -f ${PREFIX}/bin/qdoas  # [linux]
+        - test -f ${PREFIX}/qdoas.app/Contents/MacOS/qdoas  # [osx]
+        - if not exist %LIBRARY_BIN%\\qdoas.exe exit 1  # [win]
 
 about:
   home: https://uv-vis.aeronomie.be/software/QDOAS/
