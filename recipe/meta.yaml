@@ -1,5 +1,5 @@
 {% set name = "qdoas-all" %}
-{% set version = "3.7.9" %}
+{% set version = "3.7.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,17 +7,17 @@ package:
 
 source:
   url: https://github.com/UVVIS-BIRA-IASB/qdoas/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 1c14a97b9065f16753a8c43b0d9f17ebef55b93ba70dc7c35ad1a5c587a551e8
+  sha256: e77bd6b5a58b45f47e7ea3374fe5f918c521feb76348b4afe46ab8989c204060
 
 build:
-  number: 2
+  number: 0
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
-    - {{ cdt('mesa-libgl-devel') }}  # [linux]
+    - libgl-devel  # [linux]
     - {{ cdt('mesa-dri-drivers') }}  # [linux]
     - {{ cdt('libselinux') }}  # [linux]
     - {{ cdt('libxdamage') }}  # [linux]
@@ -36,6 +36,7 @@ requirements:
     - libnetcdf
     - libxmlpp
     - libxml2-devel
+    - liblzma-devel  # [win]
     - glibmm
     - glib
     - qt6-main
