@@ -41,13 +41,6 @@ requirements:
     - glib
     - qt6-main
     - qwt
-  run:
-    - coda >=2.24.2
-    - hdf4
-    - hdf5 >=1.14.2
-    - libnetcdf
-    - qt6-main
-    - qwt
 
 outputs:
   - name: doas_cl
@@ -58,24 +51,13 @@ outputs:
         - {{ compiler('c') }}
         - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
-        - {{ cdt('mesa-libgl-devel') }}  # [linux]
-        - {{ cdt('mesa-dri-drivers') }}  # [linux]
-        - {{ cdt('libselinux') }}  # [linux]
-        - {{ cdt('libxdamage') }}  # [linux]
-        - {{ cdt('libxxf86vm') }}  # [linux]
-        - {{ cdt('libxext') }}     # [linux]
-        - cmake
-        - make  # [not win]
-        - pkg-config
       host:
-        - libboost-headers
         - coda >=2.24.2
         - eigen
         - hdf4
         - hdf5 >=1.14.2
         - libnetcdf
         - libxmlpp
-        - glibmm
       run:
         - coda >=2.24.2
         - hdf4
@@ -93,25 +75,13 @@ outputs:
         - {{ compiler('c') }}
         - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
-        - {{ cdt('mesa-libgl-devel') }}  # [linux]
-        - {{ cdt('mesa-dri-drivers') }}  # [linux]
-        - {{ cdt('libselinux') }}  # [linux]
-        - {{ cdt('libxdamage') }}  # [linux]
-        - {{ cdt('libxxf86vm') }}  # [linux]
-        - {{ cdt('libxext') }}     # [linux]
-        - cmake
-        - qt6-main  # [osx and build_platform != target_platform]
-        - make  # [not win]
-        - pkg-config
       host:
-        - libboost-headers
         - coda >=2.24.2
         - eigen
         - hdf4
         - hdf5 >=1.14.2
         - libnetcdf
         - libxmlpp
-        - glibmm
         - qt6-main
         - qwt
       run:
