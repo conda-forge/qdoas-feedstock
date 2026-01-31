@@ -51,6 +51,7 @@ outputs:
         - {{ compiler('c') }}
         - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
+        - cmake
       host:
         - coda >=2.24.2
         - eigen
@@ -75,6 +76,7 @@ outputs:
         - {{ compiler('c') }}
         - {{ stdlib("c") }}
         - {{ compiler('cxx') }}
+        - cmake
       host:
         - coda >=2.24.2
         - eigen
