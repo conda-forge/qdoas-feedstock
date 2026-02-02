@@ -1,0 +1,132 @@
+schema_version: 1
+
+context:
+  name: qdoas-all
+  version: 3.7.10
+
+recipe:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+cache:
+  source:
+    url: https://github.com/UVVIS-BIRA-IASB/qdoas/archive/refs/tags/${{ version }}.tar.gz
+    sha256: e77bd6b5a58b45f47e7ea3374fe5f918c521feb76348b4afe46ab8989c204060
+
+  build:
+    number: 2
+
+  requirements:
+    build:
+      - ${{ compiler('c') }}
+      - ${{ stdlib("c") }}
+      - ${{ compiler('cxx') }}
+      - cmake
+      - if: not win
+        then: make
+      - if: osx and build_platform != target_platform
+        then: qt6-main
+      - pkg-config
+    host:
+      - libboost-headers
+      - coda >=2.24.2
+      - eigen
+      - hdf4
+      - hdf5 >=1.14.2
+      - libnetcdf
+      - libxmlpp
+      - libxml2-devel
+      - if: win
+        then: liblzma-devel
+      - glibmm
+      - glib
+      - if: linux
+        then: libgl-devel
+      - qt6-main
+      - qwt
+
+outputs:
+  - package:
+      name: doas_cl
+    build:
+      script:
+        file: ${{ 'install.sh' if unix else '' }}
+    requirements:
+      build:
+        - ${{ compiler('c') }}
+        - ${{ stdlib("c") }}
+        - ${{ compiler('cxx') }}
+        - cmake
+      host:
+        - coda >=2.24.2
+        - eigen
+        - hdf4
+        - hdf5 >=1.14.2
+        - libnetcdf
+        - libxmlpp
+      run:
+        - coda >=2.24.2
+        - hdf4
+        - hdf5 >=1.14.2
+        - libnetcdf
+    tests:
+      - script:
+          - doas_cl
+  - package:
+      name: qdoas
+    build:
+      script:
+        file: ${{ 'install.sh' if unix else '' }}
+    requirements:
+      build:
+        - ${{ compiler('c') }}
+        - ${{ stdlib("c") }}
+        - ${{ compiler('cxx') }}
+        - cmake
+      host:
+        - coda >=2.24.2
+        - eigen
+        - hdf4
+        - hdf5 >=1.14.2
+        - libnetcdf
+        - libxmlpp
+        - qt6-main
+        - qwt
+      run:
+        - coda >=2.24.2
+        - hdf4
+        - hdf5 >=1.14.2
+        - libnetcdf
+        - qt6-main
+        - qwt
+        - doas_cl
+    tests:
+      - script:
+          - if: linux
+            then: test -f ${PREFIX}/bin/qdoas
+          - if: osx
+            then: test -f ${PREFIX}/qdoas.app/Contents/MacOS/qdoas
+          - if: win
+            then: if not exist %LIBRARY_BIN%\\qdoas.exe exit 1
+
+about:
+  summary: Application to perform DOAS retrievals of trace gases from spectral measurements
+  description: |
+    QDOAS is a cross-platform application based on the long experience of BIRA-IASB
+    (Royal Belgian Institute for Space Aeronomy) in the development and improvement of algorithms
+    for the retrieval of trace gases from UV-Visible spectral measurements (satellite, ground-based,
+    mobile or aircraft-based instruments) using the DOAS (Differential Optical Absorption Spectroscopy).
+    This software evolves along with the measurement techniques in DOAS. It has been extensively
+    validated in different intercomparison campaigns. The friendly user interface, flexibility and the
+    robustness of the algorithms largely contribute to QDOAS success in the world.
+  license: BSD-3-Clause-Clear
+  license_file: LICENSE
+  homepage: https://uv-vis.aeronomie.be/software/QDOAS/
+  repository: https://github.com/UVVIS-BIRA-IASB/qdoas
+  documentation: https://uv-vis.aeronomie.be/software/QDOAS/QDOAS_manual.pdf
+
+extra:
+  recipe-maintainers:
+    - jonasv85
+    - svniemeijer
+    - tdanckaert
