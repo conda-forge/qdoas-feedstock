@@ -10,7 +10,7 @@ source:
   sha256: e77bd6b5a58b45f47e7ea3374fe5f918c521feb76348b4afe46ab8989c204060
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
@@ -31,16 +31,13 @@ requirements:
     - libxmlpp
     - libxml2-devel
     - liblzma-devel  # [win]
-    - glibmm
-    - glib
     - libgl-devel  # [linux]
     - qt6-main
     - qwt
 
 outputs:
   - name: doas_cl
-    script: install.sh  # [unix]
-    script: install.bat  # [win]
+    script: {{ 'install.sh' if unix else 'install.bat' }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -49,7 +46,6 @@ outputs:
         - cmake
       host:
         - coda >=2.24.2
-        - eigen
         - hdf4
         - hdf5 >=1.14.2
         - libnetcdf
@@ -64,8 +60,7 @@ outputs:
         - doas_cl
 
   - name: qdoas
-    script: install.sh  # [unix]
-    script: install.bat  # [win]
+    script: {{ 'install.sh' if unix else 'install.bat' }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -74,7 +69,6 @@ outputs:
         - cmake
       host:
         - coda >=2.24.2
-        - eigen
         - hdf4
         - hdf5 >=1.14.2
         - libnetcdf
@@ -88,7 +82,7 @@ outputs:
         - libnetcdf
         - qt6-main
         - qwt
-        - doas_cl
+        - {{ pin_subpackage('doas_cl', exact=True) }}
     test:
       commands:
         - test -f ${PREFIX}/bin/qdoas  # [linux]

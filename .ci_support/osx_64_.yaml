@@ -18,8 +18,6 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '19'
-glib:
-- '2'
 hdf4:
 - 4.2.15
 libboost_headers:
