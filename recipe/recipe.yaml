@@ -53,7 +53,7 @@ outputs:
       name: doas_cl
     build:
       script:
-        file: ${{ 'install.sh' if unix else '' }}
+        file: ${{ 'install.sh' if unix else 'install.bat' }}
     requirements:
       build:
         - ${{ compiler('cxx') }}
@@ -77,7 +77,7 @@ outputs:
       name: qdoas
     build:
       script:
-        file: ${{ 'install.sh' if unix else '' }}
+        file: ${{ 'install.sh' if unix else 'install.bat' }}
     requirements:
       build:
         - ${{ compiler('cxx') }}
