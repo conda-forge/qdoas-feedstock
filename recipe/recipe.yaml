@@ -17,9 +17,14 @@ cache:
     number: 2
 
   requirements:
+    ignore_run_exports:
+      from_package:
+        - libxml2-devel
+        - qt6-main
+        - qwt
+        - libgl-devel
     build:
       - ${{ compiler('c') }}
-      - ${{ stdlib("c") }}
       - ${{ compiler('cxx') }}
       - cmake
       - if: not win
@@ -38,8 +43,6 @@ cache:
       - libxml2-devel
       - if: win
         then: liblzma-devel
-      - glibmm
-      - glib
       - if: linux
         then: libgl-devel
       - qt6-main
@@ -53,8 +56,6 @@ outputs:
         file: ${{ 'install.sh' if unix else '' }}
     requirements:
       build:
-        - ${{ compiler('c') }}
-        - ${{ stdlib("c") }}
         - ${{ compiler('cxx') }}
         - cmake
       host:
@@ -79,8 +80,6 @@ outputs:
         file: ${{ 'install.sh' if unix else '' }}
     requirements:
       build:
-        - ${{ compiler('c') }}
-        - ${{ stdlib("c") }}
         - ${{ compiler('cxx') }}
         - cmake
       host:
