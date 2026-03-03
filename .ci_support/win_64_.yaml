@@ -15,7 +15,7 @@ libboost_headers:
 liblzma_devel:
 - '5'
 libnetcdf:
-- 4.9.3
+- 4.10.0
 libxml2_devel:
 - '2.14'
 qt6_main:
