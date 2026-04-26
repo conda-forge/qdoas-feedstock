@@ -21,7 +21,7 @@ cxx_compiler_version:
 hdf4:
 - 4.2.15
 libboost_headers:
-- '1.88'
+- '1.90'
 libnetcdf:
 - 4.10.0
 libxml2_devel:
