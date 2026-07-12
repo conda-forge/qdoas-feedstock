@@ -23,7 +23,7 @@ hdf4:
 libboost_headers:
 - '1.90'
 libnetcdf:
-- 4.10.0
+- 4.10.1
 libxml2_devel:
 - '2.14'
 macos_machine:
