@@ -28,7 +28,7 @@ requirements:
     - hdf4
     - hdf5 >=1.14.2
     - libnetcdf
-    - libxmlpp
+    - libxmlpp-5.0
     - libxml2-devel
     - liblzma-devel  # [win]
     - libgl-devel  # [linux]
