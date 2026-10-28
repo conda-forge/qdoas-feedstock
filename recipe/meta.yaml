@@ -10,7 +10,7 @@ source:
   sha256: 2163b8c1db34a8e3ae4d54f8b097bedb8b82a26c2ab3981b43cb490ca960f87c
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
@@ -49,12 +49,13 @@ outputs:
         - hdf4
         - hdf5 >=1.14.2
         - libnetcdf
-        - libxmlpp
+        - libxmlpp-5.0
       run:
         - coda >=2.24.2
         - hdf4
         - hdf5 >=1.14.2
         - libnetcdf
+        - libxmlpp-5.0
     test:
       commands:
         - doas_cl
@@ -72,7 +73,7 @@ outputs:
         - hdf4
         - hdf5 >=1.14.2
         - libnetcdf
-        - libxmlpp
+        - libxmlpp-5.0
         - qt6-main
         - qwt
       run:
@@ -80,6 +81,7 @@ outputs:
         - hdf4
         - hdf5 >=1.14.2
         - libnetcdf
+        - libxmlpp-5.0
         - qt6-main
         - qwt
         - {{ pin_subpackage('doas_cl', exact=True) }}
