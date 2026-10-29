@@ -17,7 +17,7 @@ liblzma_devel:
 libnetcdf:
 - 4.10.1
 libxml2_devel:
-- '2.14'
+- '2.15'
 qt6_main:
 - '6.11'
 target_platform:
