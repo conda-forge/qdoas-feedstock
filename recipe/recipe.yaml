@@ -4,12 +4,12 @@ context:
   name: qdoas-all
   version: 3.7.14
 
-build:
-  number: 1
-
 recipe:
   name: ${{ name|lower }}
   version: ${{ version }}
+
+build:
+  number: 1
 
 outputs:
   - staging:
@@ -23,6 +23,7 @@ outputs:
         - libgl-devel
       build:
       - ${{ compiler('c') }}
+      - ${{ stdlib("c") }}
       - ${{ compiler('cxx') }}
       - cmake
       - if: not win
@@ -58,6 +59,7 @@ outputs:
     requirements:
       build:
         - ${{ compiler('cxx') }}
+        - ${{ stdlib("c") }}
         - cmake
       host:
         - coda >=2.24.2
@@ -83,6 +85,7 @@ outputs:
     requirements:
       build:
         - ${{ compiler('cxx') }}
+        - ${{ stdlib("c") }}
         - cmake
       host:
         - coda >=2.24.2
