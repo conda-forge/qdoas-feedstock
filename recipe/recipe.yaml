@@ -4,26 +4,24 @@ context:
   name: qdoas-all
   version: 3.7.14
 
+build:
+  number: 1
+
 recipe:
   name: ${{ name|lower }}
   version: ${{ version }}
 
-cache:
-  source:
-    url: https://github.com/UVVIS-BIRA-IASB/qdoas/archive/refs/tags/${{ version }}.tar.gz
-    sha256: 9e3e4c9265c2a950b02b99ea34136c7b022ca6b38f27759f63d0197bd6fd3e00
-
-  build:
-    number: 1
-
-  requirements:
-    ignore_run_exports:
-      from_package:
+outputs:
+  - staging:
+      name: ${{ name|lower }}-build
+    requirements:
+      ignore_run_exports:
+        from_package:
         - libxml2-devel
         - qt6-main
         - qwt
         - libgl-devel
-    build:
+      build:
       - ${{ compiler('c') }}
       - ${{ compiler('cxx') }}
       - cmake
@@ -32,14 +30,14 @@ cache:
       - if: osx and build_platform != target_platform
         then: qt6-main
       - pkg-config
-    host:
+      host:
       - libboost-headers
       - coda >=2.24.2
       - eigen
       - hdf4
       - hdf5 >=1.14.2
       - libnetcdf
-      - libxmlpp
+      - libxmlpp-devel
       - libxml2-devel
       - if: win
         then: liblzma-devel
@@ -47,10 +45,13 @@ cache:
         then: libgl-devel
       - qt6-main
       - qwt
+    source:
+      url: https://github.com/UVVIS-BIRA-IASB/qdoas/archive/refs/tags/${{ version }}.tar.gz
+      sha256: 9e3e4c9265c2a950b02b99ea34136c7b022ca6b38f27759f63d0197bd6fd3e00
 
-outputs:
   - package:
       name: doas_cl
+    inherit: ${{ name|lower }}-build
     build:
       script:
         file: ${{ 'install.sh' if unix else 'install.bat' }}
@@ -64,7 +65,7 @@ outputs:
         - hdf4
         - hdf5 >=1.14.2
         - libnetcdf
-        - libxmlpp
+        - libxmlpp-devel
       run:
         - coda >=2.24.2
         - hdf4
@@ -75,6 +76,7 @@ outputs:
           - doas_cl
   - package:
       name: qdoas
+    inherit: ${{ name|lower }}-build
     build:
       script:
         file: ${{ 'install.sh' if unix else 'install.bat' }}
@@ -88,7 +90,7 @@ outputs:
         - hdf4
         - hdf5 >=1.14.2
         - libnetcdf
-        - libxmlpp
+        - libxmlpp-devel
         - qt6-main
         - qwt
       run:
