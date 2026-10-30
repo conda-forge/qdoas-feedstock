@@ -1,5 +1,5 @@
-About qdoas-all-feedstock
-=========================
+About doas_cl-feedstock
+=======================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/qdoas-feedstock/blob/main/LICENSE.txt)
 
@@ -20,7 +20,6 @@ mobile or aircraft-based instruments) using the DOAS (Differential Optical Absor
 This software evolves along with the measurement techniques in DOAS. It has been extensively
 validated in different intercomparison campaigns. The friendly user interface, flexibility and the
 robustness of the algorithms largely contribute to QDOAS success in the world.
-
 
 Current build status
 ====================
@@ -76,10 +75,10 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-doas__cl-green.svg)](https://anaconda.org/conda-forge/doas_cl) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/doas_cl.svg)](https://anaconda.org/conda-forge/doas_cl) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/doas_cl.svg)](https://anaconda.org/conda-forge/doas_cl) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/doas_cl.svg)](https://anaconda.org/conda-forge/doas_cl) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-qdoas-green.svg)](https://anaconda.org/conda-forge/qdoas) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/qdoas.svg)](https://anaconda.org/conda-forge/qdoas) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/qdoas.svg)](https://anaconda.org/conda-forge/qdoas) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/qdoas.svg)](https://anaconda.org/conda-forge/qdoas) |
 
-Installing qdoas-all
-====================
+Installing doas_cl
+==================
 
-Installing `qdoas-all` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `doas_cl` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
@@ -208,17 +207,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating qdoas-all-feedstock
-============================
+Updating doas_cl-feedstock
+==========================
 
-If you would like to improve the qdoas-all recipe or build a new
+If you would like to improve the doas_cl recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/qdoas-all-feedstock are
+Note that all branches in the conda-forge/doas_cl-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
