@@ -2,14 +2,14 @@ schema_version: 1
 
 context:
   name: qdoas-all
-  version: 3.7.14
+  version: "3.7.15"
 
 recipe:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - staging:
@@ -17,38 +17,38 @@ outputs:
     requirements:
       ignore_run_exports:
         from_package:
+          - libxml2-devel
+          - qt6-main
+          - qwt
+          - libgl-devel
+      build:
+        - ${{ compiler('c') }}
+        - ${{ stdlib("c") }}
+        - ${{ compiler('cxx') }}
+        - cmake
+        - if: not win
+          then: make
+        - if: osx and build_platform != target_platform
+          then: qt6-main
+        - pkg-config
+      host:
+        - libboost-headers
+        - coda >=2.24.2
+        - eigen
+        - hdf4
+        - hdf5 >=1.14.2
+        - libnetcdf
+        - libxmlpp-devel
         - libxml2-devel
+        - if: win
+          then: liblzma-devel
+        - if: linux
+          then: libgl-devel
         - qt6-main
         - qwt
-        - libgl-devel
-      build:
-      - ${{ compiler('c') }}
-      - ${{ stdlib("c") }}
-      - ${{ compiler('cxx') }}
-      - cmake
-      - if: not win
-        then: make
-      - if: osx and build_platform != target_platform
-        then: qt6-main
-      - pkg-config
-      host:
-      - libboost-headers
-      - coda >=2.24.2
-      - eigen
-      - hdf4
-      - hdf5 >=1.14.2
-      - libnetcdf
-      - libxmlpp-devel
-      - libxml2-devel
-      - if: win
-        then: liblzma-devel
-      - if: linux
-        then: libgl-devel
-      - qt6-main
-      - qwt
     source:
       url: https://github.com/UVVIS-BIRA-IASB/qdoas/archive/refs/tags/${{ version }}.tar.gz
-      sha256: 9e3e4c9265c2a950b02b99ea34136c7b022ca6b38f27759f63d0197bd6fd3e00
+      sha256: ecac2213dc6735c0e31d8642b8a05dafb0b9cdff5b81f195f725c7e84fb8ae5e
 
   - package:
       name: doas_cl
