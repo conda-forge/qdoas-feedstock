@@ -30,7 +30,7 @@ outputs:
           then: make
         - if: osx and build_platform != target_platform
           then: qt6-main
-        - pkg-config
+        - pkgconf
       host:
         - libboost-headers
         - coda >=2.24.2
